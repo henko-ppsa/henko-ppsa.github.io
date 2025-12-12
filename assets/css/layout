@@ -1,0 +1,224 @@
+/* -------------------------------
+   Header
+---------------------------------*/
+header.site-header {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid var(--muted);
+  z-index: 40;
+}
+
+.nav {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--brand-blue);
+}
+
+.brand img {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+nav a.link {
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--brand-blue);
+  transition: background 0.2s;
+}
+
+nav a.link:hover {
+  background: var(--accent-1);
+}
+
+/* -------------------------------
+   Hero
+---------------------------------*/
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 20px;
+  background: linear-gradient(180deg, rgba(21, 47, 76, 0.06), rgba(21, 47, 76, 0.02));
+  overflow: hidden;
+}
+
+.hero-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 350px;
+  height: 350px;
+  background: url('../img/ppsa/PPSA_Logo_Variations_PPSA_White_Colour.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.15;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-card-wrapper {
+  max-width: var(--maxw);
+  width: 100%;
+  z-index: 1;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-card {
+  position: relative;
+  background: var(--light);
+  padding: 28px;
+  border-radius: var(--radius);
+  border: 1px solid var(--muted);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  z-index: 1;
+}
+
+.hero-inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 20px;
+  align-items: start;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-text h1 {
+  font-size: 1.9rem;
+  margin: 0;
+}
+
+.hero-text p.lead {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.hero-stats {
+  width: 260px;
+  text-align: center;
+}
+
+.stat-title {
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: var(--brand-blue);
+}
+
+.stat-sub {
+  font-size: 0.9rem;
+  color: var(--dark-muted);
+}
+
+.stat-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.stat-number {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--dark-muted);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: var(--muted);
+  margin: 12px 0;
+}
+
+/* -------------------------------
+   Sections & About / Why Choose Us
+---------------------------------*/
+section {
+  padding: 28px 20px;
+  border-bottom: 1px dashed var(--muted);
+  max-width: var(--maxw);
+  margin: 0 auto;
+}
+
+.section-head h3 {
+  color: var(--brand-blue);
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.section-head p {
+  color: var(--dark-muted);
+}
+
+.about-grid-wrapper {
+  max-width: var(--maxw);
+  margin: 16px auto 0 auto;
+  padding: 0 20px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 18px;
+  align-items: start;
+}
+
+/* -------------------------------
+   Footer
+---------------------------------*/
+footer.page-footer {
+  padding: 26px 0;
+  text-align: center;
+  color: var(--dark-muted);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--muted);
+}
+
+/* -------------------------------
+   Responsive
+---------------------------------*/
+@media (max-width: 900px) {
+  .about-grid,
+  .hero-inner-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text p.lead {
+    font-size: 1rem;
+  }
+
+  .hero-card-wrapper {
+    padding: 0 12px;
+  }
+}
+/* End of layout.css */

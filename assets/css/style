@@ -1,0 +1,6 @@
+/* style.css - optional, acts as a single import for HTML */
+@import url("base.css");
+@import url("components.css");
+@import url("layout.css");
+@import url("pages.css");
+/* This file imports all CSS modules for easier inclusion in HTML files */
