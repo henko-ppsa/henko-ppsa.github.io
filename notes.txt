@@ -1,3 +1,5 @@
+STRUCTURE
+
 pps-africa-website/
 │
 ├── index.html (main page)
@@ -52,3 +54,47 @@ pps-africa-website/
 │   └── fonts/
 │
 └── README.md
+
+BRAND
+    /* Core Brand Colours */
+    --brand-blue: #152F4C; /* Primary Brand Blue */
+    --brand-green: #359C37; /* Primary Brand Green */
+
+    /* Neutrals, Backgrounds and Text */
+    --light: #FFFFFF; /* Pure White */
+    --bg: #E5E7EB; /* Cool Gray Light */
+    --muted: #9CA3AF; /* Warm Gray */
+    --dark-muted: #6B7280; /* Dark Gray (for depth) */
+    --text: #152F4C; /* Primary Brand Blue */
+
+    /* Accent Colours */
+    --accent-1: #F2C94C; /* Fresh Yellow */
+    --accent-2: #F2994A; /* Orange */
+    --accent-3: #56CCF2; /* Sky Blue */
+    --accent-4: #2D9C9C; /* Deep Teal */
+    --accent-5: #D4AF37; /* Metallic Gold */
+
+    /* Feedback Colours */
+    --success: #27AE60; /* Success Green */ 
+    --error: #EB5757; /* Error Red */
+    --warning: #F2C94C; /* Warning Yellow */
+    --info: #2D9C9C; /* Info Teal */
+    /* Shades and Tints can be created using opacity or HSL adjustments */
+    
+    /* Example: */
+    --brand-blue-light: #152F4C1A; /* 10% opacity of Primary Brand Blue */
+    --brand-green-dark: #196031 ; /* Darker shade of Primary Brand Green */
+
+    /* Usage Examples */
+    /* Background: background-color: var(--bg); */
+    /* Text: color: var(--text); */
+    /* Button Primary: background-color: var(--brand-blue); color: var(--light); */
+    /* Button Secondary: background-color: var(--brand-green); color: var(--light); */
+    /* Accent Element: color: var(--accent-1); */
+
+    /* Current colors in use - v3.0.0 */
+    --brand-green: #0B5F4A;
+    --brand-green-dark: #094c3b;
+    --surface: #ffffff;
+    --surface-alt: #f3f3f0;
+    --muted: #6b6b6b;
