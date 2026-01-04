@@ -500,14 +500,14 @@
 
     .country-selector {
       position: relative;
-      min-width: 140px;
+      min-width: 160px;
     }
 
     .selected-country {
       display: flex;
       align-items: center;
-      gap: 8px;
-      padding: 14px 16px;
+      gap: 10px;
+      padding: 14px 18px;
       border: 2px solid #e5e7eb;
       border-radius: 12px;
       background: white;
@@ -528,6 +528,8 @@
     .flag {
       font-size: 24px;
       line-height: 1;
+      width: 32px;
+      text-align: center;
     }
 
     .country-code {
@@ -626,7 +628,7 @@
 
     .contact-info p {
       opacity: 0.9;
-      margin-bottom: 24px;
+      margin-bottom: 8px;
     }
 
     .contact-info a {
@@ -816,8 +818,8 @@
         <a class="link" href="#about" onclick="closeMenu()">About</a>
         <a class="link" href="#technologies" onclick="closeMenu()">Technologies</a>
         <a class="link" href="#partners" onclick="closeMenu()">Partners</a>
-        <a class="link" href="#markets" onclick="closeMenu()">Regions</a>
         <a class="link" href="#services" onclick="closeMenu()">Services</a>
+        <a class="link" href="#markets" onclick="closeMenu()">Regions</a>
         <a class="link" href="#contact" onclick="closeMenu()">Contact</a>
       </nav>
     </div>
@@ -923,27 +925,6 @@
     </div>
     </section>
 
-    <section id="markets">
-      <div class="section-head">
-        <h3>Regions We Serve</h3>
-        <p>Comprehensive coverage across Sub-Saharan Africa</p>
-      </div>
-      <div class="grid">
-        <div class="card reveal">
-          <h4>Southern Africa (SADC)</h4>
-          <p>South Africa, Angola, Mozambique, Namibia, Botswana, Zimbabwe, Zambia, Malawi, Eswatini, Lesotho, Tanzania, DRC.</p>
-        </div>
-        <div class="card reveal">
-          <h4>West Africa (ECOWAS)</h4>
-          <p>Nigeria, Ghana, Benin, Ivory Coast, Senegal, Togo, Burkina Faso, and more.</p>
-        </div>
-        <div class="card reveal">
-          <h4>East Africa (EAC & Beyond)</h4>
-          <p>Kenya, Ethiopia, Uganda, Rwanda, Burundi, Tanzania, Madagascar, and others.</p>
-        </div>
-      </div>
-    </section>
-
     <section id="services">
       <div class="section-head">
         <h3>Services</h3>
@@ -961,6 +942,27 @@
         <div class="card reveal">
           <h4>Aftermarket Support</h4>
           <p>Spare parts management, warranty handling, service (online & on-site), training. We assure ongoing after-sales service when you need it most.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="markets">
+      <div class="section-head">
+        <h3>Regions We Serve</h3>
+        <p>Comprehensive coverage across Sub-Saharan Africa</p>
+      </div>
+      <div class="grid">
+        <div class="card reveal">
+          <h4>Southern Africa (SADC)</h4>
+          <p>South Africa, Angola, Mozambique, Namibia, Botswana, Zimbabwe, Zambia, Malawi, Eswatini, Lesotho, Tanzania, DRC.</p>
+        </div>
+        <div class="card reveal">
+          <h4>West Africa (ECOWAS)</h4>
+          <p>Nigeria, Ghana, Benin, Ivory Coast, Senegal, Togo, Burkina Faso, and more.</p>
+        </div>
+        <div class="card reveal">
+          <h4>East Africa (EAC & Beyond)</h4>
+          <p>Kenya, Ethiopia, Uganda, Rwanda, Burundi, Tanzania, Madagascar, and others.</p>
         </div>
       </div>
     </section>
@@ -1121,7 +1123,6 @@
 
       countryList.innerHTML = filtered.map(country => `
         <div class="country-option" data-code="${country.code}" data-flag="${country.flag}" data-name="${country.name}">
-          <span class="flag">${country.flag}</span>
           <span class="country-name">${country.name}</span>
           <span class="country-code">${country.code}</span>
         </div>
