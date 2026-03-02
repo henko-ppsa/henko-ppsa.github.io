@@ -608,7 +608,8 @@
                     <img class="flag" id="selectedFlag"
                          src="https://flagcdn.com/w40/za.png"
                          srcset="https://flagcdn.com/w80/za.png 2x"
-                         alt="South Africa" aria-hidden="true">
+                         alt="South Africa" aria-hidden="true"
+                         onerror="this.src='https://via.placeholder.com/24x16?text=?'">
                     <span class="country-code" id="selectedCode">+27</span>
                     <span class="dropdown-icon" aria-hidden="true">&#9660;</span>
                   </button>
@@ -660,7 +661,6 @@
     <p>&copy; <span id="currentYear"></span> Process &amp; Packaging Solutions Africa &mdash; All Rights Reserved</p>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
     'use strict';
 
@@ -696,7 +696,7 @@
     ];
 
     function flagImg(iso, name) {
-      return '<img class="flag" src="https://flagcdn.com/w40/' + iso + '.png" srcset="https://flagcdn.com/w80/' + iso + '.png 2x" alt="' + name + '" loading="lazy">';
+      return '<img class="flag" src="https://flagcdn.com/w40/' + iso + '.png" srcset="https://flagcdn.com/w80/' + iso + '.png 2x" alt="' + name + '" loading="lazy" onerror="this.src=\'https://via.placeholder.com/24x16?text=?\'">';
     }
 
     var selectedCountry = countries[0];
@@ -766,12 +766,6 @@
       var opt = e.target.closest('.country-option');
       if (opt) { setCountry({ code: opt.dataset.code, iso: opt.dataset.iso, name: opt.dataset.name }); closeDropdown(); phoneInput.focus(); }
     });
-    countryListEl.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        var opt = e.target.closest('.country-option');
-        if (opt) { e.preventDefault(); setCountry({ code: opt.dataset.code, iso: opt.dataset.iso, name: opt.dataset.name }); closeDropdown(); phoneInput.focus(); }
-      }
-    });
 
     /* MOBILE NAV */
     var menuToggle  = document.getElementById('menuToggle');
@@ -786,7 +780,6 @@
       navLinks.classList.add('open');
       navBackdrop.classList.add('active');
       menuToggle.setAttribute('aria-expanded', 'true');
-      menuToggle.setAttribute('aria-label', 'Close navigation menu');
     }
 
     function closeNav() {
@@ -796,7 +789,6 @@
       navLinks.classList.remove('open');
       navBackdrop.classList.remove('active');
       menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.setAttribute('aria-label', 'Open navigation menu');
     }
 
     menuToggle.addEventListener('click', function() {
@@ -823,6 +815,7 @@
 
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
+      formStatus.style.display = 'none';
 
       var cleanPhone = phoneInput.value.replace(/^0+/, '').trim();
       var payload = {
@@ -843,9 +836,7 @@
           contactForm.reset();
           setCountry(countries[0]);
         } else {
-          return res.json().catch(function() { return {}; }).then(function(json) {
-            showStatus('error', (json && json.errors && json.errors[0] && json.errors[0].message) || 'Could not send message. Please try again.');
-          });
+          showStatus('error', 'Could not send message. Please try again later.');
         }
       }).catch(function() {
         showStatus('error', 'Network error. Please check your connection and try again.');
@@ -859,6 +850,10 @@
       formStatus.className = 'form-status ' + type;
       formStatus.textContent = msg;
       formStatus.style.display = 'block';
+      // Auto-scroll to status on mobile
+      if (window.innerWidth < 768) {
+        formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
 
     document.getElementById('currentYear').textContent = new Date().getFullYear();
