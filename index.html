@@ -12,7 +12,7 @@
   <meta property="og:type" content="website" />
   <link rel="preload" href="assets/img/ppsa/PPSA_Logo Variations_PPSA_Full Colour_Icon.png" as="image">
   <link rel="icon" type="image/png" href="assets/img/ppsa/ppsa_website_africa_without_madagascar.png">
-  
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LYBSJS56DK"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-LYBSJS56DK');</script>
 
@@ -77,7 +77,6 @@
       overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
     }
 
-    /* HEADER - NO BLUR FIX */
     .site-header {
       position: sticky; top: 0;
       background: #FFFFFF;
@@ -129,7 +128,6 @@
     .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
     .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* HERO */
     .hero {
       background: linear-gradient(150deg, var(--brand-green) 0%, var(--brand-green-dark) 60%, #1a5c1b 100%);
       color: var(--light); padding: 130px 24px 110px; position: relative; overflow: hidden;
@@ -183,7 +181,6 @@
     .btn-green { background: var(--brand-green); color: white; box-shadow: 0 4px 16px rgba(53,156,55,0.3); }
     .btn-green:hover { background: var(--brand-green-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(53,156,55,0.4); }
 
-    /* SECTIONS */
     section { padding: 96px 24px; position: relative; }
     section:nth-of-type(even) { background: var(--bg); }
 
@@ -198,7 +195,6 @@
     }
     .section-head p { font-size: 1.1rem; color: var(--muted); max-width: 540px; margin: 0 auto; }
 
-    /* CARDS */
     .grid {
       max-width: var(--maxw); margin: 0 auto;
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px;
@@ -218,7 +214,6 @@
     .card h3 { color: var(--brand-blue); font-size: 1.25rem; margin-bottom: 12px; font-weight: 700; }
     .card p { color: var(--muted); line-height: 1.7; font-size: 0.97rem; }
 
-    /* PARTNERS */
     .partners-grid {
       max-width: var(--maxw); margin: 0 auto;
       display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px;
@@ -237,7 +232,6 @@
     }
     .partner:hover img { filter: grayscale(0%); opacity: 1; }
 
-    /* CONTACT */
     .contact-grid {
       max-width: var(--maxw); margin: 0 auto;
       display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px;
@@ -266,7 +260,6 @@
     }
     .form-group textarea { height: 130px; resize: vertical; min-height: 80px; }
 
-    /* PHONE / COUNTRY */
     .phone-input-group { display: flex; gap: 10px; }
     .country-selector { position: relative; flex-shrink: 0; }
     .selected-country {
@@ -307,11 +300,8 @@
     .country-option .country-name { flex: 1; font-size: 0.9rem; }
     .phone-input { flex: 1; min-width: 0; }
 
-    /* MOBILE BACKDROP - NO OVERLAY FOR DROPDOWN */
-    .dropdown-backdrop {
-      display: none !important;
-    }
-    
+    .dropdown-backdrop { display: none !important; }
+
     .nav-backdrop {
       display: none; position: fixed; inset: 0;
       background: rgba(0,0,0,0.3); z-index: 999;
@@ -320,7 +310,6 @@
     }
     .nav-backdrop.active { display: block; }
 
-    /* CONTACT INFO */
     .contact-info {
       background: linear-gradient(150deg, var(--brand-blue) 0%, #0f1f33 100%);
       color: var(--light); padding: 40px; border-radius: var(--radius-lg);
@@ -337,64 +326,38 @@
     .africa-map { margin-top: auto; padding-top: 24px; }
     .africa-map img { width: 100%; height: auto; display: block; border-radius: var(--radius-sm); opacity: 0.85; }
 
-    /* FOOTER */
     .page-footer { background: var(--brand-blue); color: rgba(255,255,255,0.7); text-align: center; padding: 28px 24px; font-size: 0.9rem; }
     .page-footer a { color: rgba(255,255,255,0.85); text-underline-offset: 3px; }
 
-    /* TABLET */
     @media (max-width: 1024px) {
       .contact-grid { grid-template-columns: 1fr; gap: 28px; }
       .partners-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    /* MOBILE */
-    body.nav-open {
-      overflow: hidden;
-      position: fixed;
-      width: 100%;
-    }
+    body.nav-open { overflow: hidden; position: fixed; width: 100%; }
 
     @media (max-width: 768px) {
       .menu-toggle { display: flex; }
-
       .nav-links {
-        position: fixed;
-        top: 0; right: 0; bottom: 0;
-        width: min(300px, 85vw);
-        background: #fff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 4px;
-        padding: 80px 32px 40px;
-        z-index: 1000;
+        position: fixed; top: 0; right: 0; bottom: 0;
+        width: min(300px, 85vw); background: #fff;
+        flex-direction: column; justify-content: center; align-items: flex-start;
+        gap: 4px; padding: 80px 32px 40px; z-index: 1000;
         box-shadow: -4px 0 32px rgba(0,0,0,0.12);
-        transform: translateX(100%);
-        transition: transform 0.3s var(--ease);
-        overflow-y: auto;
+        transform: translateX(100%); transition: transform 0.3s var(--ease); overflow-y: auto;
       }
       .nav-links.open { transform: translateX(0); }
-
-      .nav-link {
-        width: 100%; text-align: left;
-        padding: 14px 0; font-size: 1.1rem;
-        border-bottom: 1px solid rgba(0,0,0,0.06);
-      }
+      .nav-link { width: 100%; text-align: left; padding: 14px 0; font-size: 1.1rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
       .nav-link:last-child { border-bottom: none; }
-
       .hero { padding: 80px 20px 60px; }
       section { padding: 64px 20px; }
-
       .grid { grid-template-columns: 1fr; }
       .hero-features { grid-template-columns: 1fr; }
       .partners-grid { grid-template-columns: 1fr; }
-
       .brand-tagline { display: none; }
       .brand-name { font-size: 0.88rem; }
-
       .contact-form-wrapper { padding: 24px 20px; }
       .contact-info { padding: 24px 20px; }
-
       .country-selector.open .country-dropdown {
         position: fixed; top: 50%; left: 50%;
         transform: translate(-50%, -50%);
@@ -529,7 +492,7 @@
           </a>
         </div>
         <div class="partner">
-          <a href="https://www.apiheattransfer.com/our-products/schmidt/" target="_blank" rel="noopener noreferrer" aria-label="Visit API Schmidt-Bretten website">
+          <a href="https://www.apischmidt-bretten.de/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit API Schmidt-Bretten website">
             <img src="assets/img/partners/API_Logo.png" alt="API Schmidt-Bretten" loading="lazy">
           </a>
         </div>
@@ -680,7 +643,7 @@
 
     const countries = [
       { name: 'South Africa',      code: '+27',  iso: 'za' },
-      { name: 'Nigeria',            code: '+234', iso: 'ng' },
+      { name: 'Nigeria',           code: '+234', iso: 'ng' },
       { name: 'Kenya',             code: '+254', iso: 'ke' },
       { name: 'Ghana',             code: '+233', iso: 'gh' },
       { name: 'Cameroon',          code: '+237', iso: 'cm' },
@@ -721,7 +684,6 @@
     var countryListEl    = document.getElementById('countryList');
     var countrySearchEl  = document.getElementById('countrySearch');
     var phoneInput       = document.getElementById('fphone');
-    var backdrop         = document.getElementById('dropdownBackdrop');
 
     function setCountry(c) {
       selectedCountry = c;
@@ -837,21 +799,20 @@
         message: contactForm.elements['message'].value,
       };
 
-      fetch('https://n8n.pps-africa.com/webhook/website-lead', {
+      fetch('https://n8n.jho-consulting.com/webhook/website-lead', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload),
+        body: new URLSearchParams(payload),
       }).then(function(res) {
         if (res.ok) {
           showStatus('success', 'Message sent successfully. We\'ll get back to you soon.');
-          
+
           if (typeof mt !== 'undefined') {
-              mt('send', 'contact', {
-                  firstname: payload.name,
-                  email: payload.email,
-                  phone: payload.phone,
-                  company: payload.company
-              });
+            mt('send', 'contact', {
+              firstname: payload.name,
+              email:     payload.email,
+              phone:     payload.phone,
+              company:   payload.company
+            });
           }
 
           contactForm.reset();
